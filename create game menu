@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul  {
+            display: flex;
+            text-align: center;
+            width: 1020px;
+            height: 40px;
+            margin: auto;
+            padding-left: 0;
+            background-color: #021018;
+            border : 1px solid black;
+            border-top : 3px solid #00B2CF;
+         
+
+            
+            
+            
+        }
+       
+        ul  li{
+            flex : 1;
+             list-style: none; 
+             
+        }
+        ul > li {
+            text-align: center;
+            padding: 10px 0;
+            border: 1px solid black;
+            cursor: pointer;
+            position : relative;
+            color : white;
+            
+            
+        
+            
+        }
+        ol{
+            padding-left: 0;
+            position: top;
+            display:none;
+            border : 2px solid skyblue;
+            position:absolute;
+            top:38px;
+        }
+        ol > li {
+           
+            width: 200px; /*li가 display none으로 숨겨져있는데 나타날 때 크기*/
+            padding: 10px 0; /*상하 10px 좌측 0*/
+            background-color: #123643;
+            color:white;
+           
+
+        }
+
+        ul > li:hover > ol{
+            display: block;
+            
+        }
+
+        ul li:hover{
+            color:#00B2CF;
+            border-bottom: 3px #00B2CF;
+            padding-bottom : 1px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li><span>홈</span></li>
+        <li><span>기록실</span>
+        <ol>
+            <li><span>LoL 기록실 - 경기기록</span></li>
+            <li><span>LoL 기록실 - 선수기록</span></li>
+            <li><span>LoL 기록실 - 팀 통산</span></li>
+            <li><span>LoL 기록실 - 챔피언 픽/밴</span></li>
+            <li><span>LoL 기록실 - 래더랭킹</span></li>
+            <li><span>LoL 프로팀 정보</span></li>
+        </ol>
+    </li>
+    
+        <li><span>LCK 인벤</span></li>
+        
+        <li><span>챔피언</span>
+            
+        <ol>
+            <li><span>LoL 챔피언 정보</span></li>
+            <li><span>LoL 챔피언 정보</span></li>
+            <li><span>LoL 챔피언 정보</span></li>
+        </ol>
+    
+    </li> 
+        <li><span>카운터픽</span></li>
+        <li><span>공략</span></li>
+        <li><span>스킨갤러리</span></li>
+        <li><span>방송/영상</span></li>
+        
+        <li><span>LoL DB</span>
+        <ol>
+            <li><span>시즌13 룬 시뮬</span></li>
+            <li><span>시즌13 아이템 DB</span></li>
+            <li><span>소환사 주문 DB</span></li>
+        </ol>
+    </li>
+        
+
+        </ul>
+
+    
+</body>
+</html>
