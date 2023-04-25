@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+        }
+        ul {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            padding-left: 0;
+
+        }
+        li {
+            margin: 10px;
+        }
+
+        ul  button{
+            border: #1B66C9;
+            border-radius: 5%;
+            width: 100px;
+            padding : 5px;
+            color : white;
+            background-color: #1B66C9;
+            font-size: medium;
+        }
+        
+        
+
+
+        .logo{
+            padding-top: 120px;
+            padding-bottom: 30px;
+            text-align: center;
+        }
+        
+        .search{
+            display: flex;
+            margin: 20px auto;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ddd;
+            width: 600px;
+            border-radius: 20px;
+
+        }
+        .search:hover{
+            box-shadow: 1px 1px 1px darkgrey;
+        }
+        .search input{
+            all: unset;
+            padding: 10px;
+            width: 400px;
+        }
+
+        .search > div {
+            margin : 0 10px;
+        }
+
+        
+
+        .buttons{
+            margin-top: 50px;
+            text-align: center;
+        }
+        .buttons > button{
+            background-color: #F8F9FA;
+            border: 3px solid #F8F9FA;
+            width: 150px;
+            height: 30px;
+            border-radius: 5px 5px 5px 5px;
+            cursor: pointer;
+        }
+        .buttons > button:hover {
+            border: 0.5px solid darkgray;
+            box-shadow: 1px 1px #eee;
+            
+        }
+
+        .center{
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        
+
+        footer{
+            width:100%;
+            position : fixed;
+            bottom: 0;
+            background-color:#F2F2F2;
+        }
+        .bottom{
+            padding: 20px;
+            text-align: start;
+            height: 20px;
+            border:100%;
+            color : darkgrey;
+            margin-bottom: -2px;
+            
+          
+        }
+        .adv{
+            min-height: 100%;
+            height: 25px;
+            color : darkgrey;
+            display: flex;
+            justify-content: space-between;
+            font-size: medium;
+            padding-bottom:20px;
+            border-top: 1px solid #DADCE0;
+        }
+        .front{
+            text-align: start;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            padding-top: 20px;
+            padding-right: 50px;
+        }
+        .back{
+            text-align: start;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            padding-top: 20px;
+            padding-right: 50px;
+        
+        }
+
+
+        
+     
+        
+    </style>
+</head>
+<body>
+
+
+    <header>
+        <div class="top">           
+                <ul>
+                    <li>Google 정보</li>
+                    <li>스토어</li>
+                </ul>
+            </div>
+
+            <div class="top">
+                <ul>
+                    <li>Gmail</li>
+                    <li>이미지</li>
+                    <li>⁝⁝⁝</li>
+                    <li><button>로그인</button></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
+
+    <main>
+    <div class="logo">
+            <img src="img/구글.png" height="90">
+        </div>
+
+    <div class="search">
+        <div class="">🔍</div>
+        <div class=""><input type="search" name="google"></div>
+        <div class="">⌨ </div>
+        <div class="">🎤 </div>
+        <div class="">📷 </div>
+        
+    </div>
+
+    <div class="buttons">
+        <button>Google 검색</button>
+        <button>I'm Feeling Lucky</button>
+    </div>
+</main>
+
+
+   
+  <footer>
+        <div class="bottom">대한민국</div>
+        <div class="adv">
+            <div class="front">
+                <ul>
+                    <li>광고</li>
+                    <li>비즈니스</li> 
+                    <li>검색의 원리</li>
+                </ul>
+            </div>
+            <div class="back">
+                <ul>
+                    <li>개인저보처리방침</li>
+                    <li>약관</li>
+                    <li>설정</li>
+                </ul>
+            </div>
+        </div>
+  </footer>
+  
+
+
+</body>
+</html>
+
