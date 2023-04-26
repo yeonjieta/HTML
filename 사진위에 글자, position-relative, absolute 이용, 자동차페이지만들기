@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            /* border: 1px dashed red; */
+            display: flex;
+            flex-flow: wrap;
+            width: 770px;
+        }
+        .item{     
+            width: 250px;
+            height: 190px;
+            /* border: 1px solid red; */
+            margin: 1px;
+            position: relative;
+            overflow: hidden;
+            
+        }
+        .item > img{
+            /* border: 1px dashed blue;   */
+            width: 250px;
+            
+        }
+
+        .item:hover > img{
+            transition-duration: 0.5s;
+            transform: scale(110%);
+
+        }
+        .item > .text{
+            border: 2px dashed blue;
+            color: white;
+            position:absolute;
+            bottom: 0;
+            width: 100%;
+            padding-top: 20px;
+            padding-bottom: 10px;
+            background: linear-gradient(to bottom, transparent  , black);
+            display : flex;
+            font-size: 14px;
+
+        }
+
+        .item > .text > .number{
+           font-size: 35px;
+           font-weight: bold;
+           /* margin-left: 5px; */
+           text-align: center;
+           line-height: 30px;
+           width: 30px;
+        }
+        .item > .text > .content > .title{
+            font-weight: bold;
+        }
+            
+            
+
+        
+        /* .item > h2{
+            position: absolute;
+            bottom: 8px;
+            left:10px;
+            color: white;
+            margin-bottom: 0px;
+        }
+        .item > h3{
+            position: absolute;
+            bottom: 0px;
+            left: 28px;
+            font-size: small;
+            font-weight: bold;
+            color: white;
+        } */
+        
+    </style>
+</head>
+<body>
+    
+    <div class="wrap">
+        <div class="item">
+            <img src="img/1.jpg">
+            <div class="text">
+                <div class="number">1</div>
+                <div class="content">
+                    <div class="title">포르쉐 911 터보 S 카브리올레</div>
+                <div class="view">👁 4622 명</div>
+            </div>
+        </div>
+        </div>
+       <div class="item">
+            <img src="img/2.jpg">
+            <div class="text">
+                <div class="number">2</div>
+                <div class="content">
+                    <div class="title">동아 코란도 지프 2.0 가솔린 ...</div>
+                    <div class="view">👁 3696 명</div>
+                </div>
+        </div>
+        </div>
+       <div class="item">
+            <img src="img/3.jpg">
+            <div class="text">
+                <div class="number">3</div>
+                <div class="content">
+                    <div class="title">포르쉐 카이엔 4.0 터보 GT 쿠페</div>
+                    <div class="view">👁 3482 명</div>
+                </div>
+            </div>
+        </div>
+       <div class="item">
+            <img src="img/4.jpg">
+            <div class="text">
+                <div class="number">4</div>
+                <div class="content">
+                    <div class="title">벤츠 마이바흐 GLS 600 4매틱</div>
+                    <div class="view">👁 3416 명</div>
+                </div>
+            </div>
+        </div>
+       <div class="item">
+            <img src="img/5.jpg">
+            <div class="text">
+                <div class="number">5</div>
+                <div class="content">
+                    <div class="title">페라리 F430 스파이더</div>
+                    <div class="view">👁 2281 명</div>
+                </div>
+            </div>
+        </div>
+       <div class="item">
+            <img src="img/6.jpg">
+            <div class="text">
+                <div class="number">6</div>
+                <div class="content">
+                    <div class="title">로버 미니 1.0 카브리올레</div>
+                    <div class="view">👁 2138 명</div>
+                </div>
+            </div>
+        </div>
+       <div class="item">
+            <img src="img/7.jpg">
+            <div class="text">
+                <div class="number">7</div>
+                <div class="content">
+                    <div class="title">람보르기니 아벤타도르 LP70...</div>
+                    <div class="view">👁 1979 명</div>
+                </div>
+        </div>
+       <div class="item">
+            <img src="img/8.jpg">
+            <div class="text">
+                <div class="number">8</div>
+                <div class="content">
+                    <div class="title">지프 랭글러 2.0 루비콘 4도어...</div>
+                    <div class="view">👁 1708 명</div>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="img/9.jpg">
+            <div class="text">
+                <div class="number">9</div>
+                <div class="content">
+                    <div class="title">현대 e-카운티 캠핑카</div>
+                    <div class="view">👁 1382 명</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
