@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex09.html</title>
+    <style>
+        #root{  /*전체 박스*/
+            border: 2px solid black;
+            width:500px;
+            
+        }
+        ul.tab{  /*tab은 위에 꺼*/
+            display: flex;
+            list-style: none;
+            padding-left: 0;
+            margin : 0;
+            height: 50px;
+        }
+
+        ul.tab > li {
+            flex : 1;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            border: 1px solid grey;
+        }
+
+        ul.tab > li.selected{   /*selected라는게 붙으면 하단 테두리를 지운다.*/
+            border-bottom:0;
+        }
+
+        div.box{
+            position: relative;
+            width:100%;
+            height : 300px;
+        }
+        div.box > div { 
+            position: absolute; /*의도적으로 겹치게 만듬*/
+            width: 100%;
+            height: 100%;
+            top:0;
+            left: 0;
+            box-sizing: border-box;
+            padding: 20px;
+            font-size:70px;
+
+        }
+        ul.tab > li:nth-child(1), /*첫번째 요소*/
+        div.box > div:nth-child(1) {
+            background-color: pink;
+        }
+
+        ul.tab > li:nth-child(2),
+        div.box > div:nth-child(2) {
+            background-color: lightgoldenrodyellow;
+        }
+
+        ul.tab > li:nth-child(3),
+        div.box > div:nth-child(3) {
+            background-color: skyblue;
+        }
+
+        .hidden {
+            display:none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>상단 탭에 따라서 다른 내용이 나타나는 메뉴 구성</h1>
+    <hr>
+
+    <div id="root">
+        <ul class="tab">   <!--ul에 li가 3개-->
+            <li class="selected">menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+        </ul>
+        <div class="box">   <!--div에 div가 3개-->
+            <div class="menu1">menu1</div>
+            <div class="menu2 hidden">menu2</div>
+            <div class="menu3 hidden">menu3</div>
+        </div>
+    </div>
+    
+    <script>
+        // nodeList
+        const tabList = document.querySelectorAll('ul.tab > li')
+        const boxList = document.querySelectorAll('div.box > div')
+
+        tabList.forEach((element, index) => {
+            /*click된 요소가 selected를 가져가게 해줘야한다.*/
+            element.onclick = function(event){  // 클릭하면 \
+                // 모든 탭의 selected 클래스를 제거한다.
+                tabList.forEach(e => e.classList.remove('selected'))
+
+                // 클릭된 항목은 selected 클래스를 추가한다.
+                element.classList.add('selected')
+
+                // 모든 box에 hidden 클래스를 추가한다.
+                boxList.forEach(e => e.classList.add('hidden'))
+
+                // index가 일치하는 box는 hidden을 제거한다.
+                boxList[index].classList.remove('hidden')
+            }  
+                 
+        })
+
+      
+    </script>
+
+</body>
+</html>
