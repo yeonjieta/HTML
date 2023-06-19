@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #clock{
+            background-color: black;
+            color: lime;
+            text-align: center;
+            padding: 20px;
+            width: fit-content;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>현재 시간</h1>
+    <hr>
+    <h2 id ="clock"></h2>
+
+    <script>
+        const clock = document.getElementById('clock')
+
+        const clockHandler = function(){
+            const d = new Date()
+            let hh = d.getHours()
+            let mm = d.getMinutes()
+            let ss = d.getSeconds()
+            let ampm = '오전'
+
+            if(hh > 12) ampm = '오후'
+            if(hh > 12) hh = hh - 12 
+            if(hh < 10) hh = '0' + hh
+            if(mm < 10) mm = '0' + mm
+            if(ss < 10) ss = '0' + ss
+
+            clock.innerText = `${ampm} ${hh}:${mm}:${ss}`
+        }
+        clockHandler() // 직접 1회 호출 그 이후엔 interval 이용  // 내가 실행하고 싶으면 () : 내가 직접 호출하겠다 clockHandler()
+        setInterval(clockHandler, 1000)  // 전달해주고 싶으면 함수 뒤에 괄호붙이면 안된다. clockHandler
+    
+    </script>
+    
+</body>
+</html>
