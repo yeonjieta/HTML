@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        .content {
+            position: fixed;       /*스크롤에 상관없이 고유 위치를 가지게 한다.*/
+            top : 50%;             /*상단에서 50% 떨어진 곳에 배치*/ 
+            left : 50%;            /*왼쪽에서 50% 떨어진 곳에 배치*/
+            transform : translate(-50%, -50%);   /*자기 크기 기준 왼쪽위로 50% 이동*/
+            width:  400px;
+            height: 240px;
+            border : 2px solid black;
+            display: flex;              /*요소를 정렬한다(기본은 가로)*/
+            flex-direction : column;    /* 요소의 정렬축을  세로로 설정 */ 
+            justify-content: center;    /*중심축 기준 가운데 정렬*/
+            align-items: center;        /*교차축 기준 가운데 정렬*/
+            box-shadow: 10px 10px 10px grey;    /*오른쪽 아래 10px 그림자 그라데이션 10px*/
+            border-radius: 10px;        /*테두리의 모서리를 반지름 10px 원형으로 바꾼다.*/
+            background-color: #fafafa;  /*배경색을 지정하지 않으면 뒷면이 비춰보이다*/
+            z-index: 5;                     /*overlay 보다 더 위에 표시되어야 한다.*/
+            transition-duration:  0.5s;     /*숨었다가 나타낼 때 0.5초의 지연시간을 가진다.*/
+            opacity: 1;                     /*투명도 1 (명확하게 보인다)*/
+        }
+        .overlay {  /*새까만 배경만 만들어주는 역할*/
+            z-index: 3;
+            position: fixed;
+            top:0; /*왼쪽 상단부터 시작*/
+            left:0;
+            width:100%;
+            height : 100%;
+            background-color: rgba(0, 0, 0, 50%);
+        }
+        .hidden {
+            z-index: -1;  /*숨겨져 있을 때는 다른 요소를 가리지 않는다.*/
+            opacity: 0;   /*숨겨져 있으면 투명도가 0이라서 보이지 않는다.*/
+            
+        }
+        .hidden .overlay {
+            height: 0;  /*숨겨져 있을 때 overlay의 높이는 0(요소를 가리지 않는다.)*/
+        }
+        .hidden .content {
+            top:100%;        /*상단에서 100% 떨어진 곳에 배치한다.*/
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>modal</h1>
+    <hr>
+
+    <button id = "open">열기</button>
+
+    <div class="modal hidden">
+        <div class="overlay"> </div>
+            <div class="content">
+                <h3>Hello</h3>
+                <button id="close">닫기</button>
+            </div>
+        </div>
+        
+
+        <script>
+
+            const open = document.getElementById('open')
+            const close = document.getElementById('close')
+            const overlay = document.querySelector('.overlay')
+            const modal = document.querySelector('.modal')
+
+            open.onclick = () => modal.classList.remove('hidden')
+            close.onclick = () => modal.classList.add('hidden')
+            overlay.onclick = () => modal.classList.add('hidden')   
+            // hidden을 지울거냐 추가할거냐 , 모양부터 만들고
+        </script>
+</body>
+</html>
